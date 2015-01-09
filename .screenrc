@@ -1,0 +1,5 @@
+autodetach on
+startup_message off
+caption always "%3n %t%? (%u)%?%?: %h%?=%c"
+## make the shell in every window a login shell
+##shell -$SHELL
