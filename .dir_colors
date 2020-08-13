@@ -1,0 +1,239 @@
+# Configuration file for dircolors, a utility to help you set the
+# LS_COLORS environment variable used by GNU ls with the --color option.
+# Copyright (C) 1996, 1999-2010 Free Software Foundation, Inc.
+# Copying and distribution of this file, with or without modification,
+# are permitted provided the copyright notice and this notice are preserved.
+# The keywords COLOR, OPTIONS, and EIGHTBIT (honored by the
+# slackware version of dircolors) are recognized but ignored.
+# Possibly useful emacs-lisp to show the colors:
+# (font-lock-add-keywords nil '(("38;5;\\([1-9][0-9]+\\)" (1 `(face (:background ,((lambda (c) (let* ((x (- (string-to-int c) 16)) (arr '("00" "5f" "87" "af" "d7" "ff")) (blue (mod x 6)) (green (mod (/ x 6) 6)) (red (mod (/ x 36) 6))) (if (> x 215) (let* ((z (- x 216)) (s (nth z '("08" "12" "1c" "26" "30" "3a" "44" "4e" "58" "62" "6c" "76" "80" "8a" "94" "9e" "a8" "b2" "bc" "c6" "d0" "da" "e4" "ee" "ff")))) (concat "#" s s s)) (concat "#" (nth red arr) (nth green arr) (nth blue arr))))) (match-string 1)))))) ("30" (0 '(face (:foreground "black")))) ("31" (0 '(face (:foreground "red")))) ("32" (0 '(face (:foreground "green")))) ("33" (0 '(face (:foreground "#808000")))) ("34" (0 '(face (:foreground "blue")))) ("35" (0 '(face (:foreground "magenta")))) ("36" (0 '(face (:foreground "cyan")))) ("37" (0 '(face (:foreground "white" :background "#A0A0A0")))) ("40" (0 '(face (:background "#303030" :foreground "white")))) ("41" (0 '(face (:background "red")))) ("42" (0 '(face (:background "green")))) ("43" (0 '(face (:background "yellow")))) ("44" (0 '(face (:background "blue" :foreground "white")))) ("45" (0 '(face (:background "magenta")))) ("46" (0 '(face (:background "cyan")))) ("47" (0 '(face (:background "white"))))))
+
+
+
+# Below, there should be one TERM entry for each termtype that is colorizable
+TERM Eterm
+TERM ansi
+TERM color-xterm
+TERM con132x25
+TERM con132x30
+TERM con132x43
+TERM con132x60
+TERM con80x25
+TERM con80x28
+TERM con80x30
+TERM con80x43
+TERM con80x50
+TERM con80x60
+TERM cons25
+TERM console
+TERM cygwin
+TERM dtterm
+TERM eterm-color
+TERM gnome
+TERM gnome-256color
+TERM jfbterm
+TERM konsole
+TERM kterm
+TERM linux
+TERM linux-c
+TERM mach-color
+TERM mlterm
+TERM putty
+TERM rxvt
+TERM rxvt-256color
+TERM rxvt-cygwin
+TERM rxvt-cygwin-native
+TERM rxvt-unicode
+TERM rxvt-unicode256
+TERM screen
+TERM screen-256color
+TERM screen-256color-bce
+TERM screen-bce
+TERM screen-w
+TERM screen.linux
+TERM vt100
+TERM xterm
+TERM xterm-16color
+TERM xterm-256color
+TERM xterm-256color-italic
+TERM xterm-88color
+TERM xterm-color
+TERM xterm-debian
+# Below are the color init strings for the basic file types. A color init
+# string consists of one or more of the following numeric codes:
+# Attribute codes:
+# 00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
+# Text color codes:
+# 30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
+# Background color codes:
+# 40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
+#NORMAL 00 # no color code at all
+#FILE 00 # regular file: use no color at all
+RESET 0 # reset to "normal" color
+DIR 38;5;27 # directory
+LINK 38;5;51 # symbolic link. (If you set this to 'target' instead of a
+ # numerical value, the color is as for the file pointed to.)
+MULTIHARDLINK 01;04 # regular file with more than one link
+FIFO 40;33 # pipe
+SOCK 01;40;35 # socket
+DOOR 01;40;35 # door
+BLK 40;33;01 # block device driver
+CHR 40;33;01 # character device driver
+ORPHAN 40;31;01 # symlink to nonexistent file, or non-stat'able file
+MISSING 01;05;37;41 # non-existent file linked to
+SETUID 37;41 # file that is setuid (u+s)
+SETGID 30;43 # file that is setgid (g+s)
+CAPABILITY 30;41 # file with capability
+STICKY_OTHER_WRITABLE 30;42 # dir that is sticky and other-writable (+t,o+w)
+OTHER_WRITABLE 34;42 # dir that is other-writable (o+w) and not sticky
+STICKY 37;44 # dir with the sticky bit set (+t) and not other-writable
+# This is for files with execute permission:
+EXEC 38;5;34
+# List any file extensions like '.gz' or '.tar' that you would like ls
+# to colorize below. Put the extension, a space, and the color init string.
+# (and any comments you want to add after a '#')
+# If you use DOS-style suffixes, you may want to uncomment the following:
+#.cmd 01;32 # executables (bright green)
+.exe 38;5;34
+.com 38;5;34
+#.btm 01;32
+#.bat 01;32
+# Or if you want to colorize scripts even if they do not have the
+# executable bit actually set.
+#.sh 01;32
+#.csh 01;32
+ # archives or compressed (bright red)
+.tar 38;5;160
+.tgz 38;5;160
+.arj 38;5;160
+.taz 38;5;160
+.lzh 38;5;160
+.lzma 38;5;160
+.tlz 38;5;160
+.txz 38;5;160
+.zip 38;5;160
+.z 38;5;160
+.Z 38;5;160
+.dz 38;5;160
+.gz 38;5;160
+.lz 38;5;160
+.xz 38;5;160
+.bz2 38;5;160
+.bz 38;5;160
+.tbz 38;5;160
+.tbz2 38;5;160
+.tz 38;5;160
+.deb 38;5;160
+.rpm 38;5;160
+.jar 38;5;160
+.war 38;5;160
+.ear 38;5;160
+.sar 38;5;160
+.rar 38;5;160
+.ace 38;5;160
+.zoo 38;5;160
+.cpio 38;5;160
+.7z 38;5;160
+.rz 38;5;160
+# image formats
+.jpg 38;5;222
+.jpeg 38;5;222
+.jp2 38;5;222
+.jpg2 38;5;222
+.jpe 38;5;222
+.gif 38;5;222
+.bmp 38;5;222
+.pbm 38;5;222
+.pgm 38;5;222
+.ppm 38;5;222
+.tga 38;5;222
+.xbm 38;5;222
+.xpm 38;5;222
+.tif 38;5;222
+.tiff 38;5;222
+.png 38;5;222
+.svg 38;5;222
+.svgz 38;5;222
+.djvu 38;5;222
+# can we distinguish video formats?
+.mng 00;33
+.pcx 00;33
+.mov 00;33
+.mpg 00;33
+.mpeg 00;33
+.m2v 00;33
+.mkv 00;33
+.ogm 00;33
+.mp4 00;33
+.m4v 00;33
+.mp4v 00;33
+.vob 00;33
+.qt 00;33
+.nuv 00;33
+.wmv 00;33
+.asf 00;33
+.rm 00;33
+.rmvb 00;33
+.flc 00;33
+.avi 00;33
+.fli 00;33
+.flv 00;33
+# Not sure what everything is down here...
+.gl 38;5;222
+.dl 38;5;222
+.xcf 38;5;222
+.xwd 38;5;222
+.yuv 00;33
+.cgm 38;5;222
+.emf 38;5;222
+# http://wiki.xiph.org/index.php/MIME_Types_and_File_Extensions
+.axv 38;5;222
+.anx 38;5;222
+.ogv 00;33
+.ogx 38;5;222
+# audio formats
+# old one had them 38;5;172, I got used to that.
+.aac 38;5;172
+.au 38;5;172
+.flac 38;5;172
+.mid 38;5;172
+.midi 38;5;172
+.mka 38;5;172
+.mp3 38;5;172
+.mpc 38;5;172
+.ogg 38;5;172
+.ra 38;5;172
+.wav 38;5;172
+# http://wiki.xiph.org/index.php/MIME_Types_and_File_Extensions
+.axa 38;5;172
+.oga 38;5;172
+.spx 38;5;172
+.xspf 38;5;172
+###
+.html 00;35
+.HTML 00;35
+.htm 00;35
+.HTM 00;35
+.php 00;35
+##
+.pgp 31
+.asc 31
+.tex 38;5;39
+# Is this counterproductive, emphasizing too much?
+# *~ 00;31
+# Everything is 256-color now, right???
+*~ 38;5;244
+.pdf 38;5;125
+.PDF 38;5;125
+# Coding file types
+.go 38;5;97
+.c 38;5;97
+.C 38;5;97
+.cxx 38;5;97
+.CXX 38;5;97
+.py 38;5;97
+.sh 38;5;98
+.h 38;5;92
+.H 38;5;92
+.hxx 38;5;92
+.HXX 38;5;92

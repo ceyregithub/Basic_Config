@@ -1,0 +1,26 @@
+ZSH_CONFIG_DIR="$(dirname $(readlink -f $HOME/.config/zsh/.zshrc))"
+for conf in $ZSH_CONFIG_DIR/*.zsh; do
+    source $conf
+done
+#. $ZSH_CONFIG_DIR/aliases.zsh
+#. $ZSH_CONFIG_DIR/autoload.zsh
+#. $ZSH_CONFIG_DIR/bindkey.zsh
+#. $ZSH_CONFIG_DIR/dirstack.zsh
+#. $ZSH_CONFIG_DIR/exports.zsh
+#. $ZSH_CONFIG_DIR/history.plugin.zsh
+#. $ZSH_CONFIG_DIR/k.zsh
+#. $ZSH_CONFIG_DIR/lesstermcap.zsh
+#. $ZSH_CONFIG_DIR/pless.zsh
+#. $ZSH_CONFIG_DIR/powerlevel.zsh
+#. $ZSH_CONFIG_DIR/prompt.zsh
+#. $ZSH_CONFIG_DIR/setopt.zsh
+#. $ZSH_CONFIG_DIR/sshagent.zsh
+#. $ZSH_CONFIG_DIR/title.zsh
+#. $ZSH_CONFIG_DIR/tmux.plugin.zsh
+#. $ZSH_CONFIG_DIR/zle.zsh
+#. $ZSH_CONFIG_DIR/zsh-autosuggestions.zsh
+#. $ZSH_CONFIG_DIR/zsh-syntax-highlighting.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source ~/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
+
